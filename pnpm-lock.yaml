@@ -36,8 +36,8 @@ importers:
         specifier: ^5.1.0
         version: 5.1.0
       lorcana-tcg-to-dreamborn:
-        specifier: github:bengeendokter/tcg-app-to-dreamborn#v0.0.2
-        version: https://codeload.github.com/bengeendokter/tcg-app-to-dreamborn/tar.gz/025c6be98ab67ef09365da6d59bbf04db718d6de
+        specifier: github:bengeendokter/tcg-app-to-dreamborn#v0.0.3
+        version: https://codeload.github.com/bengeendokter/tcg-app-to-dreamborn/tar.gz/a62b9ba5d1b25456d08b84ec0b8f483bbe36eb73
       normalize.css:
         specifier: ^8.0.1
         version: 8.0.1
@@ -2116,9 +2116,9 @@ packages:
     resolution: {integrity: sha512-1somDdy9sChrr9/f4UlzhdaGfDR2c/SaD2a4T7qEkG4jTS57/B3qmnjLYePwQ8cqWnUHZI0iAKxMBpCZICiZ2g==}
     engines: {node: '>=8.0'}
 
-  lorcana-tcg-to-dreamborn@https://codeload.github.com/bengeendokter/tcg-app-to-dreamborn/tar.gz/025c6be98ab67ef09365da6d59bbf04db718d6de:
-    resolution: {tarball: https://codeload.github.com/bengeendokter/tcg-app-to-dreamborn/tar.gz/025c6be98ab67ef09365da6d59bbf04db718d6de}
-    version: 0.0.2
+  lorcana-tcg-to-dreamborn@https://codeload.github.com/bengeendokter/tcg-app-to-dreamborn/tar.gz/a62b9ba5d1b25456d08b84ec0b8f483bbe36eb73:
+    resolution: {tarball: https://codeload.github.com/bengeendokter/tcg-app-to-dreamborn/tar.gz/a62b9ba5d1b25456d08b84ec0b8f483bbe36eb73}
+    version: 0.0.3
 
   lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
@@ -5043,7 +5043,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  lorcana-tcg-to-dreamborn@https://codeload.github.com/bengeendokter/tcg-app-to-dreamborn/tar.gz/025c6be98ab67ef09365da6d59bbf04db718d6de: {}
+  lorcana-tcg-to-dreamborn@https://codeload.github.com/bengeendokter/tcg-app-to-dreamborn/tar.gz/a62b9ba5d1b25456d08b84ec0b8f483bbe36eb73: {}
 
   lru-cache@10.4.3: {}
 

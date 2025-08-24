@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { backupDeck } from 'lorcana-tcg-to-dreamborn/src/backup-deck';
-import { DreambornDeck } from 'lorcana-tcg-to-dreamborn/src/model/dreamborn';
+import {backupDeck} from 'lorcana-tcg-to-dreamborn/dist/backup-deck';
+import { DreambornDeck } from 'lorcana-tcg-to-dreamborn/dist/model/dreamborn';
 
 @Component({
   selector: 'app-root',

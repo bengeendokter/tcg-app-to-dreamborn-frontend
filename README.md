@@ -1,3 +1,4 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/89c094f4-78c1-4ba5-b7f8-52ec5cac1748/deploy-status)](https://app.netlify.com/projects/tcg-app-to-dreamborn/deploys)
 # Tcg App to Dreamborn Frontend
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.4.

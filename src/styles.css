@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'normalize.css/normalize.css';
+
+html {
+  height: 100%;
+  scrollbar-gutter: stable both-edges;
+}
+
+body {
+  height: 100%;
+  color: var(--md-sys-color-on-surface);
+  background-color: var(--md-sys-color-surface);
+}
+
+div,
+main {
+  box-sizing: border-box;
+}

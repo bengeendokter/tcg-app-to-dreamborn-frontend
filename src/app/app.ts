@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { error } from 'console';
 
 @Component({
   selector: 'app-root',
@@ -22,7 +21,7 @@ export class App {
       return;
     }
 
-    this.http.post('http://localhost:3000/api/deck', { backupUrl }).subscribe({
+    this.http.post('http://192.168.0.163:3000/api/deck', { backupUrl }).subscribe({
       next: response => {
         if (!('deck' in response) || typeof response.deck !== 'string') {
           alert('Invalid response from server');
@@ -33,7 +32,14 @@ export class App {
         this.result.setValue(deckImportString);
       },
       error: response => {
-        alert('Server error: ' + response.error.error);
+        const errorMessage: string | undefined = response?.error?.error;
+
+        if (!errorMessage) {
+          alert('Could not connect to server');
+          return;
+        }
+
+        alert('Server error: ' + errorMessage);
       }
     });
   }

@@ -19,6 +19,10 @@
   margin-block-end: 8px;
 }
 
+.input {
+  min-width: 35ch;
+}
+
 .result-container {
   display: flex;
   flex-direction: column;

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, inject } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
@@ -8,6 +9,7 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
   imports: [ReactiveFormsModule],
 })
 export class App {
+  private http: HttpClient = inject(HttpClient);
   protected url: FormControl<string | null> = new FormControl('');
   protected result: FormControl<string | null> = new FormControl('');
 
@@ -19,18 +21,20 @@ export class App {
       return;
     }
 
-    try {
-      const deckImportString = "Not implemented yet";
-      this.result.setValue(deckImportString);
-    }
-    catch (error: unknown) {
-      if (error instanceof Error) {
-        alert(`Error: ${error.message}`);
+    this.http.post('http://localhost:3000/api/deck', { backupUrl }).subscribe({
+      next: response => {
+        if (!('deck' in response) || typeof response.deck !== 'string') {
+          alert('Invalid response from server');
+          return;
+        }
+
+        const deckImportString = response.deck;
+        this.result.setValue(deckImportString);
+      },
+      error: _ => {
+        alert('Server error');
       }
-      else {
-        alert('An unknown error occurred');
-      }
-    }
+    });
   }
 
   protected async copyToClipboard(): Promise<void> {

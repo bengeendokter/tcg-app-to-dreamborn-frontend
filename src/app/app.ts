@@ -16,6 +16,14 @@ export class App {
   }
 
   protected async copyToClipboard(): Promise<void> {
+    const clipboard: Clipboard | undefined = navigator.clipboard;
+
+    if (!clipboard) {
+      alert('Clipboard API not supported');
+      return;
+    }
+
     await navigator.clipboard.writeText(this.result.value ?? '');
+    alert('Copied to clipboard!');
   }
 }

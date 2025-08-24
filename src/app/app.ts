@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { error } from 'console';
 
 @Component({
   selector: 'app-root',
@@ -31,8 +32,8 @@ export class App {
         const deckImportString = response.deck;
         this.result.setValue(deckImportString);
       },
-      error: _ => {
-        alert('Server error');
+      error: response => {
+        alert('Server error: ' + response.error.error);
       }
     });
   }

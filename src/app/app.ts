@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import {backupDeck} from 'lorcana-tcg-to-dreamborn/dist/backup-deck';
-import { DreambornDeck } from 'lorcana-tcg-to-dreamborn/dist/model/dreamborn';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';-
 
 @Component({
   selector: 'app-root',
@@ -22,8 +20,7 @@ export class App {
     }
 
     try {
-      const deck: DreambornDeck = await backupDeck(backupUrl);
-      const deckImportString: string = deck.cards.map(card => [card.count, card.fullName].join(' ')).join('\n');
+      const deckImportString = "Not implemented yet";
       this.result.setValue(deckImportString);
     }
     catch (error: unknown) {

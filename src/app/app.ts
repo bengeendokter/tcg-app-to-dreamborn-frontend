@@ -14,6 +14,7 @@ export class App {
   protected result: FormControl<string | null> = new FormControl('');
 
   protected async convert(): Promise<void> {
+    this.result.setValue("Loading...");
     const backupUrl: string | null = this.url.value;
 
     if (!backupUrl) {
@@ -25,6 +26,7 @@ export class App {
       next: response => {
         if (!('deck' in response) || typeof response.deck !== 'string') {
           alert('Invalid response from server');
+          this.result.setValue("Error");
           return;
         }
 
@@ -33,6 +35,7 @@ export class App {
       },
       error: response => {
         const errorMessage: string | undefined = response?.error?.error;
+          this.result.setValue("Error");
 
         if (!errorMessage) {
           alert('Could not connect to server');

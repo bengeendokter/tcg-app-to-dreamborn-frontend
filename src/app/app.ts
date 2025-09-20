@@ -22,7 +22,7 @@ export class App {
       return;
     }
 
-    this.http.post('http://192.168.0.163:3000/api/deck', { backupUrl }).subscribe({
+    this.http.post('https://tcg-app-to-dreamborn-api.home.bengeendokter.be/api/deck', { backupUrl }).subscribe({
       next: response => {
         if (!('deck' in response) || typeof response.deck !== 'string') {
           alert('Invalid response from server');

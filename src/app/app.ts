@@ -15,7 +15,14 @@ export class App {
 
   protected async convert(): Promise<void> {
     this.result.setValue("Loading...");
-    const backupUrl: string | null = this.url.value;
+    const input: string | null = this.url.value;
+
+    if (!input) {
+      alert('Please enter a valid URL');
+      return;
+    }
+
+    const backupUrl: string | undefined = this.extractUrl(input);
 
     if (!backupUrl) {
       alert('Please enter a valid URL');
@@ -45,6 +52,21 @@ export class App {
         alert('Server error: ' + errorMessage);
       }
     });
+  }
+
+  private extractUrl(input: string): string | undefined {
+     const trimmedInput: string = input.trim();
+
+    // Find substring that strarts with http or https and ends with a whitespace or end of string
+    const urlPattern: RegExp = /(https?:\/\/[^\s]+)/g;
+    const match: RegExpExecArray | null = urlPattern.exec(trimmedInput);
+
+    if(!match) {
+      return undefined;
+    }
+
+    const url: string = match[0];
+    return url;
   }
 
   protected async copyToClipboard(): Promise<void> {

@@ -25,6 +25,7 @@ https://www.disneylorcana.com/sharing/deck?id=0d7d9390-de1d-4292-a53b-55eb6c99e6
 
     if (!input) {
       alert('Please enter a valid URL');
+      this.result.setValue("Error");
       return;
     }
 
@@ -32,6 +33,7 @@ https://www.disneylorcana.com/sharing/deck?id=0d7d9390-de1d-4292-a53b-55eb6c99e6
 
     if (!backupUrl) {
       alert('Please enter a valid URL');
+      this.result.setValue("Error");
       return;
     }
 

@@ -10,6 +10,12 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 })
 export class App {
   private http: HttpClient = inject(HttpClient);
+  protected inputPlaceholder: string =
+    `Shared Deck – Lorcana TCG
+Open the link in the Lorcana TCG app or download the app.
+https://www.disneylorcana.com/sharing/deck?id=0d7d9390-de1d-4292-a53b-55eb6c99e6d3
+-------------------------------------------
+https://www.disneylorcana.com/sharing/deck?id=0d7d9390-de1d-4292-a53b-55eb6c99e6d3`;
   protected url: FormControl<string | null> = new FormControl('');
   protected result: FormControl<string | null> = new FormControl('');
 
@@ -42,7 +48,7 @@ export class App {
       },
       error: response => {
         const errorMessage: string | undefined = response?.error?.error;
-          this.result.setValue("Error");
+        this.result.setValue("Error");
 
         if (!errorMessage) {
           alert('Could not connect to server');
@@ -55,13 +61,13 @@ export class App {
   }
 
   private extractUrl(input: string): string | undefined {
-     const trimmedInput: string = input.trim();
+    const trimmedInput: string = input.trim();
 
     // Find substring that strarts with http or https and ends with a whitespace or end of string
     const urlPattern: RegExp = /(https?:\/\/[^\s]+)/g;
     const match: RegExpExecArray | null = urlPattern.exec(trimmedInput);
 
-    if(!match) {
+    if (!match) {
       return undefined;
     }
 

@@ -1,7 +1,7 @@
 <main class="main">
   <div class="input-container">
     <label for="url">TCG App Deck share URL:</label>
-    <input type="url" id="url" [formControl]="url" class="input" />
+    <textarea id="url" [formControl]="url" class="input" [placeholder]="inputPlaceholder"></textarea>
     <button (click)="convert()">Convert</button>
   </div>
   <div class="result-container">

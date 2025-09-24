@@ -32,9 +32,10 @@
 }
 
 .input {
-  min-height: 20ch;
+  field-sizing: content;
+  max-block-size: 5lh;
 }
 
 .result {
-  min-height: 45ch;
+  min-height: 20lh;
 }

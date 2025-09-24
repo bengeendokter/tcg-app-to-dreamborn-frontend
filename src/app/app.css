@@ -4,11 +4,11 @@
 }
 
 .main {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  align-content: center;
+  min-height: 100%;
   padding-inline: 8px;
 }
 
